@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/grid.locale-en.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Profile</title>
+    <link rel="stylesheet"th:href="@{/login/profile.css}">
+</head>
+<body>
+<header>
+    <div id="backImage">
+       <a th:href="@{/home}">
+        <img src="/images/backImg.png">
+        </a>
+    </div>
+    <div id="snackbarProf">
+        <div> <span id="closeNotification" class="close" onclick="deleteNotificationBarProf()">&times;</span></div>
+        <div><p id="invitedDetailsProf"></p></div>
+        <div> <button id="copyButtonProf" onclick="copyTextValueProf()">Copy room code</button></div>
+        <div><button id="joinBtn" onclick="joinToVideoCallFromNotification()">join video call</button></div>
+    </div>
+</header>
+<section>
+    <div class="profile">
+        <div class="profile_photo">
+            <img src="/images/newProfileLogo.png" alt="ProfilePhoto" class="profile-photo">
+        </div>
+        <div id="main_Container">
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>First Name:</strong> <span id="firstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+            <p><strong>Contact No:</strong> <span id="contactNo"></span></p>
+        </div>
+
+        <div><button id="logoutBtn" onclick="logoutSession()">LOGOUT</button></div>
+    </div>
+    <div id="historyBlock">
+    <div id="filters">
+            <div id="searchByDateAndEmail"><label>Select Date:</label>
+            <input class="from" type="date" id="videoCallDate" required>
+
+            <label>Participants email</label>
+            <input class="from" type="emial" id="searchByEmail">
+        </div>
+<!--        <div> <button id="search" onclick="searchVideoCAllHistory()">SEARCH</button></div>-->
+        <div><button id="buttonload">
+            <i class="fa fa-refresh fa-spin"></i>Loading..
+        </button></div>
+           <div><button id="search" onclick="totalNumberOfRecords()">Search</button> </div>
+
+    </div>
+    <div id="history">
+        <table id="grid"></table>
+        <div id="pager"></div>
+    </div>
+        <!-- Pagination links will be dynamically added here -->
+        <div class="pagination">
+            <ul id="paginationList">
+
+            </ul>
+        </div>
+    </div>
+</section>
+<footer></footer>
+</body>
+<script src="/login/proflle.js"></script>
+<script src="/login/home.js"></script>
+</html>
+

@@ -1,0 +1,237 @@
+   body, header, section, footer {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+html, body {
+    height: 100%;
+}
+
+header {
+    height: 10%;
+    background-color:rgb(14,47,79);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section {
+    height: 90%;
+    background-color:white;
+    display: flex;
+}
+
+.profile {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(14,47,79);
+        color: white;
+    }
+}
+
+#history {
+    width: 100%;
+    height: 80%;
+    background-color: rgb(229, 243, 243);
+    overflow-y: auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#historyBlock{
+    width: 75%;
+    height: 100%;
+    background-color: rgb(229, 243, 243);
+    overflow-y: auto;
+}
+.profile_photo{
+    width: 60%;
+    height: 40%;
+    background-color:gray;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.griDiv{
+    width: 90%;
+    height: 120px;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2% auto 2% auto;
+    border:1px solid black;
+}
+.profile-photo{
+
+}
+.room {
+    border: 1px solid #e0e0e0;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+}
+#filters{
+width:100%;
+height:10%;
+background:color:white;
+display:flex;
+justify-content:space-around;
+align-items:center;
+border-bottom: 1px solid gainsboro;
+}
+#grid {
+}
+#pager {
+    margin-top: 10px;
+    text-align: center;
+}
+.ui-jqgrid .ui-jqgrid-htable th {
+    height: 4em !important;
+}
+.ui-jqgrid tr.jqgrow td{
+    height: 4em !important;
+}
+
+#buttonload {
+  background-color:  rgb(229, 243, 243);
+  border: none;
+  color:black ;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+.pagination {
+  text-align: center;
+  display: none;
+}
+
+.pagination ul {
+  list-style-type: none;
+  padding: 0;
+  display: inline-block;
+}
+
+
+.pagination ul li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.pagination ul li a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #9db2c7;
+}
+
+.pagination ul li.ellipsis {
+  pointer-events: none;
+  cursor: default;
+}
+
+.pagination li a.active {
+  font-weight: bold;
+  color: blue;
+}
+#backImage{
+width:20%;
+height:100%;
+display:flex;
+justify-content:flex-start;
+align-items:center;
+}
+
+#backImage img{
+width: auto;
+height: 40px;
+}
+
+#snackbarProf {
+  visibility: hidden;
+  width: 400px;
+  height: 80px;
+  background-color: #333;
+  color: #fff;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  font-size: 17px;
+  flex-direction: row-reverse;
+}
+
+#snackbarProf.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+#copyButton{
+width: 100px;
+height: 40px;
+}
+
+#videoCallDate{
+width:30%;
+height:30px;
+text-transform:uppercase;
+}
+
+#searchByEmail{
+width:30%;
+height:30px;
+}
+
+#search{
+width: 100px;
+height: 34px;
+}
+#logoutBtn{
+width:100%;
+height:30px;
+}
+#history{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+#searchByDateAndEmail{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:2em;
+}

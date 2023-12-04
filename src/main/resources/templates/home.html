@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"th:href="@{/login/home.css}">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div>
+    <div id="logoDiv">
+        <img id="logoPng" src="/images/newLogoo.png">
+    </div>
+    </div>
+    <div>
+    <div id="snackbar">
+       <div> <span id="closeNotification" class="close" onclick="deleteNotificationBar()">&times;</span></div>
+         <div><p id="invitedDetails"></p></div>
+         <div> <button id="copyButton" onclick="copyTextValue()">Copy room code</button></div>
+         <div><button id="joinBtn" onclick="joinToVideoCallFromNotification()">join video call</button></div>
+    </div>
+    </div>
+    <div id="createAndJoinBtn">
+    <div>
+        <button id="openModal">CREATE MEETING</button>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close" >&times;</span>
+                <h3>Share your new meeting</h3>
+                <p>Copy this code and send it to people that you want to meet with</p>
+                 <form id="join-form">
+               <input type="text" name="invite_link" required id="inviteCodeInput"/>
+               <input type="submit" value="Join Room"  id="submitButton"/>
+               </form>
+                <br>
+                <button id="copy" onclick="copyText()">COPY TEXT</button>
+                <br>
+                <button id="cancel" >CANCEL</button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button id="openModal1">JOIN MEETING</button>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span id="closeModal1" class="close">&times;</span>
+                <h3>Join a meeting</h3>
+                <p>  Enter a meeting code provided by the meeting organiser</p>
+                <form id="join-form1">
+                    <input type="text" name="invite_link_to_join" required id="inviteCodeInput1"/>
+                    <input type="submit" value="join room"  id="submitButton1"/>
+                </form>
+                <p  th:text="${errorMessage}"></p>
+            </div>
+        </div>
+    </div>
+    <div> <a th:href="@{/profile}">
+        <img src="/images/newProfileLogo.png" alt="Profile Photo" class="profile-photo">
+    </a></div>
+    </div>
+</header>
+<section>
+    <div class="main-videoCall-container">
+        <div id="local">
+<!--        <div id="user-container-1" class="video__container">-->
+<!--        </div>-->
+        </div>
+        <div id="remote">
+<!--        <div id="user-container-2" class="remote__video__container">-->
+<!--        </div>-->
+        </div>
+        <div id="controlContainer">
+            <div class="control-container" id="camera-btn">
+                <img th:src="@{/images/camera.png}"/>
+            </div>
+
+            <div class="control-container" id="mic-btn">
+                <img th:src="@{/images/mic.png}"/>
+            </div>
+
+            <div class="control-container" id="invite-user">
+                <img th:src="@{/images/invite.png}"/>
+            </div>
+            <div class="control-container-leave" id="leave">
+                <img th:src="@{/images/phone.png}"/>
+            </div>
+        </div>
+    </div>
+    <div id="inviteAndOnline">
+        <div id="userInCallDiv">
+            <div id="labelForUserInCall"></div>
+            <div id="userInCall"></div>
+        </div>
+       <div id="listOfUser">
+         <div id="btn">
+             <div id="nameOfLabel">
+
+             </div>
+            <button id="activeUser" onclick="activeUser()">REFRESH</button>
+         </div>
+        <div><button id="buttonload">
+            <i class="fa fa-refresh fa-spin"></i>Loading
+        </button></div>
+        <div id="value">
+        </div>
+       </div>
+    </div>
+</section>
+<footer>
+</footer>
+</body>
+<script src="/login/AgoraRTC_N-4.18.2.js"></script>
+<script src="/login/home.js"></script>
+</html>
+

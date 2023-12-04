@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"th:href="@{/login/login.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Login Page</title>
+</head>
+<body>
+<div class="main">
+    <div class="login-container">
+        <h2>Login</h2>
+        <p  id="error-message" th:text="${errorMessage}"></p>
+        <form action="/login" method="POST" name="loginForm"  onsubmit="return validateform()" >
+            <input type="email" class="login" id="email" name="email" required  placeholder="Enter email"><br>
+            <input type="password" class="login" id="password" name="password" placeholder="Enter password"><br>
+            <button type="submit" class="login-button">Login</button>
+            <br>
+           </form>
+            <br>
+           <p>New User? <a th:href="@{/signup}">Register now!</a></p>
+
+    </div>
+</div>
+</body>
+<script src="/login/login.js"></script>
+</html>

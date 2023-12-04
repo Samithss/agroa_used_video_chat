@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet"th:href="@{/login/signup.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div class="login-container">
+        <p id="error"></p>
+        <h2>signup</h2>
+        <p  th:text="${errorUser}"></p>
+        <form action="/signup" method="POST" name="signupform"  onsubmit="return validform()" >
+            <input type="email" class="login" name="email" id="email" placeholder="Enter email" ><br>
+
+            <input type="text" class="login" name="firstName" id="firstName" placeholder="Enter first name" ><br>
+
+            <input type="text" class="login" name="lastName" id="lastName" placeholder="Enter last name"><br>
+
+            <input type="number" class="login" name="contactNo" id="contactNo" placeholder="Contact no:"><br>
+
+            <input type="password" class="login" name="password" id="password" placeholder="Password"><br>
+
+            <button type="submit" class="login-button">Signup</button>
+        </form>
+        <p>Back to Login? <a th:href="@{/login}">click here!</a></p>
+    </div>
+</div>
+</body>
+<script src="/login/signup.js"></script>
+</html>
